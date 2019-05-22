@@ -1,0 +1,35 @@
+apply plugin: 'application'
+
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+    compile project(':core')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.0.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.199'
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // graphql 설정
+    compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.7.3'
+
+    // to embed GraphiQL tool
+    runtime 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.7.3'
+    runtime 'com.graphql-java-kickstart:graphql-java-tools'
+}
+
+mainClassName = 'example.App'
+
+task copyLicense {
+    outputs.file new File("$buildDir/LICENSE")
+    doLast {
+        copy {
+            from "LICENSE"
+            into "$buildDir"
+        }
+    }
+}
+
+applicationDistribution.from(copyLicense) {
+    into ""
+}
