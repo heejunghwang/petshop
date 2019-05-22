@@ -1,4 +1,23 @@
-This is an example application of my blog post:
+# How to run
+```
+gradle :app:run
+gradle :api:run
+```
+
+It will run 2 applications.
+1) RestApi : localhost:8081
+2) Graphql : http://localhost:8080/graphiql
+```JSON
+{
+  pets {
+    name
+    age
+    type
+  }
+}
+```
+
+##### reference
 
 * [Getting Started with Gradle: Creating a Multi-Project Build](http://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/)
 
