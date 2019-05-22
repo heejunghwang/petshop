@@ -1,7 +1,23 @@
+apply plugin: 'base'
+
 subprojects {
     apply plugin: 'java'
 
     repositories {
         mavenCentral()
+    }
+
+    group 'example'
+}
+
+project(':api') {
+    dependencies {
+        compile project(':core')
+    }
+}
+
+project(':app') {
+    dependencies {
+        compile project(':core')
     }
 }
