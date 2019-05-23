@@ -5,8 +5,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile group: 'com.h2database', name: 'h2', version: '1.4.199'
 
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
-
     // graphql 설정
     compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.7.3'
 
