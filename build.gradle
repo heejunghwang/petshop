@@ -10,13 +10,13 @@ subprojects {
     group 'example'
 }
 
-project(':api') {
+project(':rest-api') {
     dependencies {
         compile project(':core')
     }
 }
 
-project(':app') {
+project(':graphql-api') {
     dependencies {
         compile project(':core')
     }

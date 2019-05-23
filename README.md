@@ -1,7 +1,7 @@
 # How to run
 ```
-gradle :app:run
-gradle :api:run
+gradle :graphql-api:run
+gradle :rest-api:run
 ```
 
 It will run 2 applications.
