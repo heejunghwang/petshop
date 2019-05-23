@@ -1,5 +1,14 @@
 apply plugin: 'base'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+
+    }
+}
+
 subprojects {
     apply plugin: 'java'
 
@@ -8,6 +17,23 @@ subprojects {
     }
 
     group 'example'
+    version = '0.0.0'
+    sourceCompatibility = 1.8
+
+    task initSourceFolders {
+        sourceSets*.java.srcDirs*.each {
+            if( !it.exists() ) {
+                it.mkdirs()
+            }
+        }
+
+        sourceSets*.resources.srcDirs*.each {
+            if( !it.exists() ) {
+                it.mkdirs()
+            }
+        }
+    }
+
 }
 
 project(':rest-api') {

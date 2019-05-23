@@ -17,17 +17,3 @@ dependencies {
 }
 
 mainClassName = 'example.GraphqlApp'
-
-task copyLicense {
-    outputs.file new File("$buildDir/LICENSE")
-    doLast {
-        copy {
-            from "LICENSE"
-            into "$buildDir"
-        }
-    }
-}
-
-applicationDistribution.from(copyLicense) {
-    into ""
-}
