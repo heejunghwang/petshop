@@ -6,7 +6,6 @@ dependencies {
     compile group: 'com.h2database', name: 'h2', version: '1.4.199'
 
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 
     // graphql 설정
     compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.7.3'
