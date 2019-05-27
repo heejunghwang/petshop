@@ -17,6 +17,29 @@ It will run 2 applications.
 }
 ```
 
+## Examples
+1. You can run the mutation query like this.
+```
+mutation createPetMutation($pet:PetInput) {
+  createPet(input: $pet) {
+    type
+    name
+    age
+  }
+}
+```
+
+This is arguments
+```
+{
+  "pet" : {
+    "type" : "DOG",
+    "name" : "petName",
+    "age" :10
+  }
+}
+```
+
 ##### reference
 
 * [Getting Started with Gradle: Creating a Multi-Project Build](http://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/)
