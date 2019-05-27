@@ -1,10 +1,10 @@
 package example;
 
 import example.animal.Pet;
+import example.animal.PetInput;
 import example.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,7 +15,12 @@ public class PetController {
     private PetService petService;
 
     @GetMapping("/pets")
-    public List<Pet> test(){
+    public List<Pet> petList(){
         return petService.findPets();
+    }
+
+    @PostMapping("/add/pet")
+    public Pet test(@RequestBody PetInput petInput){
+        return petService.createPet(petInput);
     }
 }
