@@ -40,6 +40,15 @@ This is arguments
 }
 ```
 
+This query will parse like this format in your browser.
+
+POST
+localhost:8080/graphql
+
+``` JSON
+{"query":"mutation createPetMutation($pet:PetInput) {\n  createPet(input: $pet) {\n    type\n    name\n    age\n  }\n}","variables":{"pet":{"type":"DOG","name":"petName","age":10}},"operationName":"createPetMutation"}
+```
+
 ##### reference
 
 * [Getting Started with Gradle: Creating a Multi-Project Build](http://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/)
