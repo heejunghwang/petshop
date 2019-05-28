@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = GraphqlApp.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PetTest {
+public class PetGraphQLTemplateClientTest {
 
     @Autowired
     private GraphQLTestTemplate graphQLTestTemplate;

@@ -18,6 +18,7 @@ dependencies {
     runtime 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.7.3'
     runtime 'com.graphql-java-kickstart:graphql-java-tools'
 
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
     testCompile 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:5.9.0'
 }
 
