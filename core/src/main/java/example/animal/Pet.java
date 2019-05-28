@@ -3,6 +3,7 @@ package example.animal;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 @Data
 public class Pet {
     @Id
+    @GeneratedValue
     private long id;
 
     private String name;

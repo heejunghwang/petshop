@@ -1,0 +1,7 @@
+query{
+  pets {
+    name
+    age
+    type
+  }
+}

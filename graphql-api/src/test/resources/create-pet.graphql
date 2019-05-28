@@ -1,0 +1,7 @@
+mutation createPetMutation($pet:PetInput) {
+  createPet(input: $pet) {
+    type
+    name
+    age
+  }
+}
