@@ -6,7 +6,8 @@ import example.GraphqlApp;
 import example.domain.Animal;
 import example.domain.Pet;
 import example.domain.PetInput;
-import example.service.PetService;
+import example.resolvers.Mutation;
+import example.resolvers.Query;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,10 @@ public class PetGraphQLTemplateClientTest {
     private GraphQLTestTemplate graphQLTestTemplate;
 
     @MockBean
-    private PetService petService;
+    private Query query;
+
+    @MockBean
+    private Mutation mutation;
 
     @Test
     public void testCreatePet() throws IOException{
@@ -51,7 +55,7 @@ public class PetGraphQLTemplateClientTest {
         pet.setAge(20);
         pet.setName("my_pet");
         pet.setType(Animal.DOG);
-        when(petService.createPet(any(PetInput.class))).thenReturn(pet);
+        when(mutation.createPet(any(PetInput.class))).thenReturn(pet);
 
         //when
         GraphQLResponse response = graphQLTestTemplate.perform("graphql/create-pet.graphql", queryVariables);
@@ -72,7 +76,7 @@ public class PetGraphQLTemplateClientTest {
         pet.setType(Animal.DOG);
         List<Pet> petList = new ArrayList<>();
         petList.add(pet);
-        when(petService.findPets()).thenReturn(petList);
+        when(query.pets()).thenReturn(petList);
 
         //when
         GraphQLResponse response = graphQLTestTemplate.postForResource("graphql/post-pets.graphql");
