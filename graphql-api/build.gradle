@@ -1,14 +1,20 @@
 apply plugin: 'application'
 
+ext{
+    lombokVersion = '1.18.2'
+}
+
 dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.0.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile group: 'com.h2database', name: 'h2', version: '1.4.199'
 
-    // graphql 설정
     compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:5.7.3'
 
-    // to embed GraphiQL tool
     runtime 'com.graphql-java-kickstart:graphiql-spring-boot-starter:5.7.3'
     runtime 'com.graphql-java-kickstart:graphql-java-tools'
 
