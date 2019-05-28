@@ -1,7 +1,7 @@
 package example.service;
 
-import example.animal.Pet;
-import example.animal.PetInput;
+import example.domain.Pet;
+import example.domain.PetInput;
 import example.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

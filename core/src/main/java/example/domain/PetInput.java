@@ -1,4 +1,4 @@
-package example.animal;
+package example.domain;
 
 import lombok.Data;
 

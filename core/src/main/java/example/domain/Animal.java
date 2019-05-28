@@ -1,4 +1,4 @@
-package example.animal;
+package example.domain;
 
 /**
  * Created by hwang on 21/05/2019.

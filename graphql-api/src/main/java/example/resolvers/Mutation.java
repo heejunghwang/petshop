@@ -1,8 +1,8 @@
 package example.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import example.animal.Pet;
-import example.animal.PetInput;
+import example.domain.Pet;
+import example.domain.PetInput;
 import example.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

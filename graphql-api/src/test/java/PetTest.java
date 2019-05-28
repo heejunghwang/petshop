@@ -3,8 +3,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.graphql.spring.boot.test.GraphQLResponse;
 import com.graphql.spring.boot.test.GraphQLTestTemplate;
 import example.GraphqlApp;
-import example.animal.Animal;
-import example.animal.PetInput;
+import example.domain.Animal;
+import example.domain.PetInput;
 import example.service.PetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,7 +41,7 @@ public class PetTest {
         queryVariables.replace("pet", petParam);
 
         //when
-        GraphQLResponse response = graphQLTestTemplate.perform("create-pet.graphql", queryVariables);
+        GraphQLResponse response = graphQLTestTemplate.perform("graphql/create-pet.graphql", queryVariables);
 
         //then
         assertNotNull(response);
@@ -59,7 +59,7 @@ public class PetTest {
         petService.createPet(petInput);
 
         //when
-        GraphQLResponse response = graphQLTestTemplate.postForResource("post-pets.graphql");
+        GraphQLResponse response = graphQLTestTemplate.postForResource("graphql/post-pets.graphql");
 
         //then
         assertNotNull(response);

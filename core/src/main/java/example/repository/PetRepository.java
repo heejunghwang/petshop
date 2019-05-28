@@ -1,6 +1,6 @@
 package example.repository;
 
-import example.animal.Pet;
+import example.domain.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import example.RestApiApp;
-import example.animal.Animal;
-import example.animal.Pet;
-import example.animal.PetInput;
+import example.domain.Animal;
+import example.domain.Pet;
+import example.domain.PetInput;
 import example.service.PetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

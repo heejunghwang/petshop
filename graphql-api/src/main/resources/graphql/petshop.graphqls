@@ -22,6 +22,6 @@ enum Animal {
     MAMMOTH
 }
 
-type Mutation {
+extend type Mutation {
   createPet(input: PetInput): Pet
 }
