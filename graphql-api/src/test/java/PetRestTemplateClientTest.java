@@ -1,14 +1,17 @@
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertTrue;
+
 import example.GraphqlApp;
-import example.domain.Pet;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.LinkedMultiValueMap;
 
@@ -32,9 +35,8 @@ public class PetRestTemplateClientTest {
         ResponseEntity<String> response = testRestTemplate.exchange("/graphql", HttpMethod.POST, request, String.class);
 
         //then
-        Gson gson = new Gson();
-        Pet pet = gson.fromJson(response.getBody(), new TypeToken<Pet>(){}.getType());
-        Assert.assertNotNull(pet.getType());
+        assertNotNull(response);
+        assertTrue(response.getBody().contains("DOG"));
     }
 
     private HttpEntity<Object> forJson(String json, HttpHeaders headers) {
