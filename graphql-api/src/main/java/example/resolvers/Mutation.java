@@ -7,9 +7,6 @@ import example.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by hwang on 21/05/2019.
- */
 @Component
 public class Mutation implements GraphQLMutationResolver {
 

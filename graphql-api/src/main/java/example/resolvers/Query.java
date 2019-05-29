@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created by hwang on 21/05/2019.
- */
 @Component
 public class Query implements GraphQLQueryResolver {
 

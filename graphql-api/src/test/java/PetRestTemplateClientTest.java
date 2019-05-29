@@ -23,7 +23,7 @@ public class PetRestTemplateClientTest {
     public void getPetList(){
         //given
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json;charset=UTF-8"); //전부다 String형일 때. RestTemplate 때문에 생략가능
+        headers.add("Content-Type", "application/json;charset=UTF-8");
         String query = "mutation createPetMutation($pet:PetInput) {  createPet(input: $pet) {   type   name    age  }}";
         String variables = "{\"pet\":{\"type\":\"DOG\",\"name\":\"petName\",\"age\":10}}";
         HttpEntity<Object> request = this.forMultipart(query, variables, headers);
